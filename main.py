@@ -1,9 +1,8 @@
 import speech_recognition
 
 def record_and_recognize_audio(*args: tuple):
-    """
-    Запись и распознавание аудио
-    """
+    """ Запись и распознавание аудио """
+    
     with microphone:
         recognized_data = ""
         # регулирование уровня окружающего шума
