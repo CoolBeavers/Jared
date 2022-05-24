@@ -1,14 +1,7 @@
-import user
+import lists as l
 
 class Jared:
     """ Класс для управления ботом """
-
-    dictionary = {
-        'стоп' : 'Досвидания, ' + user.name,
-        'привет' : 'Здраствуйте, ' + user.name,
-        'браузер' : 'Уже открываю!',
-        'выключение пк' : 'Выключаю!',
-    }
 
     def __init__(self) -> None:
         """ Конструктор """
@@ -16,12 +9,14 @@ class Jared:
 
     def say(self, text):
         """ Метод для воспроизведения звука """
+        # В файле lists.py есть словарь по которому нужно делать поиск text (параметр функции)
+        # Если ничего не найдено, то бот должен говорить "Извините, такому я ещё не обучился"
         pass
 
     def open(self):
         """ Открытие браузера """
         import webbrowser
-        webbrowser.open('https://www.google.ru', new=2)
+        webbrowser.open('https://www.google.ru', new = 2)
 
     def shutdown(self):
         """ Выключение компьютера """
