@@ -2,30 +2,37 @@ import sys
 import lists as l
 from jared import Jared
 
+
+
+#           Не используюется, перемещён в класс Jared
+
+
+
+
 class Commands:
     """ Класс с возможными командами бота """
 
-    def __init__(self, command) -> None:
+    def __init__(self) -> None:
         """ Конструктор класса """
-        self.command = command
+        pass
 
-    def detected_command(self):
+    def detected_command(self, command):
         """ Метод для распознования команды """
 
-        if self.command in l.commands_hello:
+        if command in l.commands_hello:
             Jared.say('привет')
-        elif self.command in l.commands_stop:
+        elif command in l.commands_stop:
             sys.exit()
             Jared.say('стоп')
-        elif self.command in l.commands_open:
+        elif command in l.commands_open:
             Jared.open()
             Jared.say('браузер')
-        elif self.command in l.commands_shutdown:
+        elif command in l.commands_shutdown:
             Jared.open()
             Jared.shutdown('выключение пк')
-        elif self.command in l.commands_time:
+        elif command in l.commands_time:
             Jared.say('время')    
-        elif self.command in l.commands_date:
+        elif command in l.commands_date:
             Jared.say('дата')        
-        elif self.command in l.commands_rand:
+        elif command in l.commands_rand:
             Jared.say('рандом')    

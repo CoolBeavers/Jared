@@ -1,3 +1,4 @@
+from jared import Jared, Commands
 import speech_recognition
 
 def record_and_recognize_audio(*args: tuple):
@@ -35,7 +36,15 @@ if __name__ == "__main__":
     recognizer = speech_recognition.Recognizer()
     microphone = speech_recognition.Microphone()
 
+    # инициализация класса бота с характеристиками
+    jared = Jared("Alice", "female", "ru")
+    jared.setup_assistant_voice(jared)
+
     while True:
         # старт записи речи с последующим выводом распознанной речи 
         voice_input = record_and_recognize_audio()
         print(voice_input)
+
+        # отправка сказанного предложения на распознавание команды
+        voice_input = voice_input.split(" ")
+        Commands.detected_command(voice_input[0])
